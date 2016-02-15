@@ -7,10 +7,13 @@
         function makePingPong($input)
         {
             $output = array();
-            for($i = 0; $i <= $input; $i++) {
-                array_push($output, $i);
+            for($i = 1; $i <= $input; $i++) {
+                if ($i % 3 == 0) {
+                    array_push($output, 'ping');
+                } else {
+                    array_push($output, $i);
+                }
             }
-
             return $output;
         }
 
