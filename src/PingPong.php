@@ -8,10 +8,12 @@
         {
             $output = array();
             for($i = 1; $i <= $input; $i++) {
-                if ($i % 3 == 0) {
-                    array_push($output, 'ping');
+                if (($i % 3 == 0) && ($i % 5 == 0)) {
+                    array_push($output, 'ping-pong');
                 } elseif ($i % 5 == 0) {
                     array_push($output, 'pong');
+                } elseif ($i % 3 == 0) {
+                    array_push($output, 'ping');
                 }else {
                     array_push($output, $i);
                 }
