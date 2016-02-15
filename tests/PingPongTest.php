@@ -21,6 +21,20 @@
             //Assert tells our tests what to expect from the output of our method.
             $this->assertEquals(array(0, 1, 2), $result);
         }  // we will declare a method to run our first test. When we run PHPUnit, our test class will be instantiated and each of its methods will be executed.
+
+        function test_PingPong_countPing()//replaces %3 with ping.
+        {
+            //Arrange
+            $test_PingPong = new PingPong;
+            $input = 3;
+
+            //Act
+            $result = $test_PingPong->makePingPong($input);
+
+            //Assert
+            $this->assertEquals(array(0, 1, 2, 'ping'), $result);
+
+        }
     }
 
     // Run in terminal in project folder
