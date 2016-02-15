@@ -6,6 +6,8 @@
     if (empty($_SESSION['user_input'])) {
         $_SESSION['user_input'] = array();
     }
+    $app['debug']=true;
+
 
     $app = new Silex\Application();
 
@@ -16,14 +18,18 @@
 // End busy code -----------^
 
     $app->get("/", function() use ($app) {
-        return $app['twig']->render('pingpong.html.twig'); // 
+        return $app['twig']->render('pingpong.html.twig'); //
     });
 
     // Upon User Input
     $app->post("/userInput", function() use ($app) {
-          $number = new PingPong($_POST['number']);
-          $number->save();
-          return $app['twig']->render('pingpong.html.twig', array('userInput' => $number));
+
+          $my_PingPong = new PingPong($_POST['number']);
+          $my_PingPong->save();
+          $my_number = $my_PingPong->getNumber();
+          $pingpong_array = $my_PingPong->makePingPong($my_number);
+          var_dump($pingpong_array);
+          return $app['twig']->render('pingpong.html.twig', array('results' => $pingpong_array));
     });
 
 

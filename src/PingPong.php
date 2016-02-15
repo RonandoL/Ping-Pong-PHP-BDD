@@ -3,6 +3,29 @@
     {
         private $number;
 
+        function __construct($number)
+        {
+            $this->number = $number;
+        }
+
+        //setters
+        function setNumber($new_number)
+        {
+            $this->number = $new_number;
+        }
+
+        //getters
+        function getNumber()
+        {
+            return $this->number;
+        }
+
+        //savers
+        function save()
+        {
+            array_push($_SESSION['user_input'], $this);
+        }
+
         //functions
         function makePingPong($number)
         {
@@ -21,28 +44,7 @@
             return $output;
         }
 
-        //setters
-        function setNumber($new_number)
-        {
-            $this->number = $new_number;
-        }
-
-        //getters
-        function getNumber()
-        {
-            return $this->new_number;
-        }
-
-        //savers
-
-
-        function save()
-        {
-            array_push($_SESSION['user_input'], $this);
-        }
-
-
-
-
     }
+
+
 ?>
