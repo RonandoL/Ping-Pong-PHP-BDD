@@ -6,7 +6,7 @@
     {       // This is the class declaration.
             // extends PHPUnit_Framework_TestCase means that this is a special kind of class that handles testing.We will always declare our test classes like this, using upper camel case, ending the file name with Test.php.
 
-        function test_makeTitleCase_oneWord()  //we declare a method to run our first test.
+        function test_PingPong_count()  //we declare a method to run our first test.
         {
             // There're three parts to a PHPUnit test method: Arrange, Act, and Assert.
             //Arrange: gather all the materials needed to run our test. We create an instance of the class and store it in the variable $test_PingPong
