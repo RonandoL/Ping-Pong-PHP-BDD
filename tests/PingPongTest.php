@@ -12,13 +12,13 @@
             //Arrange: gather all the materials needed to run our test. We create an instance of the class and store it in the variable $test_PingPong
             //Arrange
             $test_PingPong = new PingPong;
-            $input = "beowulf";
+            $input = 2;
 
             //Act: runs the actual method that we are testing.
-            $result = $test_PingPong->makeTitleCase($input);
+            $result = $test_PingPong->PingPong($input);
 
             //Assert tells our tests what to expect from the output of our method.
-            $this->assertEquals("Beowulf", $result);
+            $this->assertEquals([1, 2], $result);
         }  // we will declare a method to run our first test. When we run PHPUnit, our test class will be instantiated and each of its methods will be executed.
     }
 
