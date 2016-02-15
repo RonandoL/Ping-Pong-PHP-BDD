@@ -33,8 +33,23 @@
 
             //Assert
             $this->assertEquals(array(1, 2, 'ping'), $result);
-
         }
+
+        function test_PingPong_countPong() // replaces 5 with 'pong'
+        {
+            //Arrange
+            $test_PingPong = new PingPong;
+            $input = 5;
+
+            //Act
+            $result = $test_PingPong->makePingPong($input);
+
+            //Assert
+            $this->assertEquals(array(1, 2, 'ping', 4, 'pong'), $result);
+        }
+
+
+
     }
 
     // Run in terminal in project folder
