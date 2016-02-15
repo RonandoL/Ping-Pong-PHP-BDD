@@ -16,14 +16,14 @@
 // End busy code -----------^
 
     $app->get("/", function() use ($app) {
-        return $app['twig']->render('pingpong.html.twig'); // , array('number' => PingPong::getAll())
+        return $app['twig']->render('pingpong.html.twig'); // 
     });
 
     // Upon User Input
     $app->post("/userInput", function() use ($app) {
-          $input = new PingPong($_POST['number']);
-          $input->save();
-          return $app['twig']->render('pingpong.html.twig', array('userInput' => $input));
+          $number = new PingPong($_POST['number']);
+          $number->save();
+          return $app['twig']->render('pingpong.html.twig', array('userInput' => $number));
     });
 
 

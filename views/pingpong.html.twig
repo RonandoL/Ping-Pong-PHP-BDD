@@ -34,8 +34,11 @@
 <!-- Results -->
           <div class="row">
               <div class="col-sm-6">
-                  
-
+                  {% if userInput is not empty %}
+                  <ul>
+                      <li>{{ userInput.getNumber }}</li>
+                  </ul>
+                  {% endif %}
               </div>
           </div>
 
