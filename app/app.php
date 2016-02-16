@@ -10,8 +10,9 @@
 
 // End busy code -----------^
 
+    // Show home page
     $app->get("/", function() use ($app) {
-        return $app['twig']->render('pingpong.html.twig'); //
+        return $app['twig']->render('pingpong.html.twig'); 
     });
 
     // Upon User Input
