@@ -12,15 +12,16 @@
 
     // Show home page
     $app->get("/", function() use ($app) {
-        return $app['twig']->render('pingpong.html.twig'); 
+        return $app['twig']->render('pingpong.html.twig');
     });
 
-    // Upon User Input
+    // Upon User Input - using a get, not a post
     $app->get("/userInput", function() use ($app) {
-        $my_input = $_GET['number'];
-        $my_PingPong = new PingPong;
-        $results = $my_PingPong->makePingPong($my_input);
+        $my_input = $_GET['number'];  // get user input from form
+        $my_PingPong = new PingPong;  // create new PingPong object
+        $results = $my_PingPong->makePingPong($my_input);  // new object runs function w/user input
 
+        // render html page with associative array of $results value
         return $app['twig']->render('pingpong.html.twig', array('results' => $results));
     });
 
